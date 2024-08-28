@@ -23,7 +23,7 @@ public class Users {
 
     private String lastName;
 
-//    @NaturalId(mutable = true)
+    @NaturalId(mutable = true)
     private String email;
 
     private String passwordOrigin;

@@ -19,16 +19,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item mx-5">
-                    <a class="nav-link active text-white" aria-current="page" th:href="@{'/'}">Home</a>
+                    <a class="nav-link active text-white" aria-current="page" th:href="@{'/home'}">Админка</a>
                 </li>
                 <li class="nav-item mx-5">
-                    <a class="nav-link text-white" th:href="@{'/question'}">Questions</a>
+                    <a class="nav-link text-white" th:href="@{'/question/all'}">Вопросы</a>
                 </li>
                 <!--                    <li class="nav-item mx-5">-->
                 <!--                        <a class="nav-link text-white" th:href="@{'/questions/new'}">Add Question</a>-->
                 <!--                    </li>-->
                 <li class="nav-item mx-5">
-                    <a class="nav-link text-white" th:href="@{'/quiz/home'}">Start Quiz</a>
+                    <a class="nav-link text-white" th:href="@{'/quiz/home'}">Начать тест</a>
                 </li>
             </ul>
             <ul class="navbar-nav navbar-right">
@@ -67,7 +67,7 @@
                     <th scope="col">Имя</th>
                     <th scope="col">Фамилия</th>
                     <th scope="col">Почта</th>
-                    <th scope="col">Пароль закодированный</th>
+<!--                    <th scope="col">Пароль закодированный</th>-->
                     <th scope="col">Пароль</th>
                     <th scope="col">Авторизация</th>
                     <th colspan="2">Действия</th>
@@ -79,7 +79,7 @@
                     <td th:text="${user.firstName}"></td>
                     <td th:text="${user.lastName}"></td>
                     <td th:text="${user.email}"></td>
-                    <td th:text="${user.password}"></td>
+<!--                    <td th:text="${user.password}"></td>-->
                     <td th:text="${user.passwordOrigin}"></td>
                     <td th:text="${user.role}"></td>
 <!--                    <td>-->

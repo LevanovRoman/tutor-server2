@@ -74,18 +74,32 @@
 
         <div class="mb-3 row">
             <label for="password" class="col-sm-2 col-form-label fs-5">Пароль</label>
-            <div class="col-sm-7">
+            <div class="col-sm-6">
                 <input type="password"  id="password" autofocus="autofocus"
                        class="form-control" required name="password" th:field="*{password}" >
             </div>
         </div>
 
-        <div class="mb-3 row">
-            <label for="role" class="col-sm-2 col-form-label fs-5">Роль</label>
-            <div class="col-sm-7">
-                <input type="text"  id="role" autofocus="autofocus"
-                       class="form-control" required name="role" th:field="*{role}" >
+<!--        <div class="mb-3 row">-->
+<!--            <label for="role" class="col-sm-2 col-form-label fs-5">Роль</label>-->
+<!--            <div class="col-sm-7">-->
+<!--                <input type="text"  id="role" autofocus="autofocus"-->
+<!--                       class="form-control" required name="role" th:field="*{role}" >-->
+<!--            </div>-->
+<!--        </div>-->
+
+        <div class="mb-3 row" >
+            <label class="col-sm-2 col-form-label fs-5">Роль</label>
+            <div class="form_radio_btn mb-3 row-cols-sm-3">
+                <input th:id="role1" type="radio" name="role1" th:value="ROLE_ADMIN" th:field="*{role}">
+                <label th:for="role1" th:text="Администратор"></label>
             </div>
+
+            <div class="form_radio_btn mb-3 row-cols-sm-3">
+                <input th:id="role2" type="radio" name="role2" th:value="ROLE_USER" th:field="*{role}">
+                <label th:for="role2" th:text="Ученик"></label>
+            </div>
+
         </div>
 
         <div>

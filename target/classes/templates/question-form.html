@@ -18,34 +18,34 @@
         <input type="hidden" th:field="*{id}">
         <div class="border border-secondary rounded p-3">
             <div class="mb-3">
-                <label for="question_title" class="form-label">question_title</label>
+                <label for="question_title" class="form-label">Вопрос</label>
                 <input type="text" th:field="*{question_title}" class="form-control" name="question_title" id="question_title">
             </div>
 
             <div class="mb-3">
-                <label for="option1" class="form-label">option1</label>
+                <label for="option1" class="form-label">Вариант 1</label>
                 <input type="text" th:field="*{option1}" class="form-control" name="option1" id="option1">
             </div>
 
             <div class="mb-3">
-                <label for="option2" class="form-label">option2</label>
+                <label for="option2" class="form-label">Вариант 2</label>
                 <input type="text" th:field="*{option2}" class="form-control" name="option2" id="option2">
             </div>
             <div class="mb-3">
-                <label for="option3" class="form-label">option3</label>
+                <label for="option3" class="form-label">Вариант 3</label>
                 <input type="text" th:field="*{option3}" class="form-control" name="option3" id="option3">
             </div>
             <div class="mb-3">
-                <label for="option4" class="form-label">option4</label>
+                <label for="option4" class="form-label">Вариант 4</label>
                 <input type="text" th:field="*{option4}" class="form-control" name="option4" id="option4">
             </div>
             <div class="mb-3">
-                <label for="right_answer" class="form-label">right_answer</label>
+                <label for="right_answer" class="form-label">Правильный ответ</label>
                 <input type="text" th:field="*{right_answer}" class="form-control" name="right_answer" id="right_answer">
             </div>
             <div class="mb-3">
-                <label for="difficulty_level" class="form-label">difficulty_level</label>
-                <input type="text" th:field="*{difficulty_level}" class="form-control" name="difficulty_level" id="difficulty_level">
+                <label for="difficulty_level" class="form-label">Уровень сложности</label>
+                <input type="number" th:field="*{difficulty_level}" class="form-control" name="difficulty_level" id="difficulty_level">
             </div>
             <div class="mb-3">
                 <th:block th:each="cat : ${categoryList}">
@@ -59,8 +59,8 @@
             </div>
 
             <div class="text-center">
-                <button type="submit" class="btn btn-primary m-2">Save</button>
-                <button type="button" class="btn btn-secondary m-2" onclick="cancelForm()">Cancel</button>
+                <button type="submit" class="btn btn-primary m-2">Сохранить</button>
+                <button type="button" class="btn btn-secondary m-2" onclick="cancelForm()">Отменить</button>
             </div>
         </div>
 
@@ -69,7 +69,7 @@
 </div>
 <script type="text/javascript">
     function cancelForm() {
-        window.location = "[[@{/question}]]";
+        window.location = "[[@{/question/all}]]";
     }
 </script>
 </body>

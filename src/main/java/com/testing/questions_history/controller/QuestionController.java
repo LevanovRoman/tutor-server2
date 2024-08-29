@@ -52,14 +52,14 @@ public class QuestionController {
     public String showNewForm(Model model){
         model.addAttribute("categoryList", getCategoryList());
         model.addAttribute("question", new Question());
-        model.addAttribute("pageTitle", "Add New Question");
+        model.addAttribute("pageTitle", "Добавить вопрос");
         return "question-form";
     }
 
     @PostMapping("/save")
     public String saveQuestion(Question question, RedirectAttributes attributes){
         questionService.save(question);
-        attributes.addFlashAttribute("message", "The question has been saved successfully.");
+        attributes.addFlashAttribute("message", "Вопрос успешно сохранён.");
         return "redirect:/question/all";
     }
 
@@ -67,8 +67,9 @@ public class QuestionController {
     public String showEditForm(@PathVariable("id") Integer id, Model model, RedirectAttributes attributes){
         try{
             Question question = questionService.getQuestionById(id);
+            model.addAttribute("categoryList", getCategoryList());
             model.addAttribute("question", question);
-            model.addAttribute("pageTitle", "Edit Question (ID: " + id + ")");
+            model.addAttribute("pageTitle", "Редактирование вопроса (ID: " + id + ")");
 
             return "question-form";
         } catch (QuestionNotFoundException e) {
@@ -81,7 +82,7 @@ public class QuestionController {
     public String deleteQuestion(@PathVariable("id") Integer id, RedirectAttributes attributes){
         try{
             questionService.deleteQuestionById(id);
-            attributes.addFlashAttribute("message", "The question ID " + id + " has been deleted.");
+            attributes.addFlashAttribute("message", "Вопрос с номером " + id + " успешно удален.");
         } catch (QuestionNotFoundException e) {
             attributes.addFlashAttribute("message", e.getMessage());
         }
